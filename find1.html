@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title>Find ord</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<style>
+body {
+    font-family:sans-serif;
+}
+
+.lb1{
+    display:block;
+    margin-top:1em;
+    margin-bottom:1em;
+}
+
+#i1, #i2 {
+    text-align:right;
+    text-transform:lowercase;
+    margin-left:.5em;
+}
+
+#i1,#i2{
+    width:4em;
+}
+
+#fo1, #fs1 {
+    display:inline;
+    margin-left: 1em;
+}
+
+
+h2{
+    margin-bottom:0em;
+    font-size:1.25em;
+}
+
+h1{
+    font-size:1.5em;
+}
+
+#ord1, #ord2, #ord3, #ord4, #ord5{
+    float:left;
+    margin-top:.25em;
+    margin-right:1em;
+    text-transform:lowercase;
+}
+
+input[type="button"]{
+  background-color: #d8d8d8;
+  color: black;
+  padding: 4px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  margin-right:.5em;
+  border-radius:0em;
+}
+</style>
+</head>
+
+<body>
+    <h1>Find ord efter gæt</h1>
+    <form>
+        <label class="lb1">Ord&nbsp;&nbsp;<input id="i1" type="text" size="5"></input>
+            <p id="fo1"></p></label>
+        <label class="lb1">Svar&nbsp;<input id="i2" type="text" size="5"></input>
+            <p id="fs1"></p></label>
+        <input type="button" onclick="vis()" value="Vis ord"></input>
+        <input type="button" onclick="rens()" value="Rens"></input>
+    </form>
+    <h2>Mulige ord</h2>
+    <p id="ord1"></p>
+    <p id="ord2"></p>
+    <p id="ord3"></p>
+    <p id="ord4"></p>
+    <p id="ord5"></p>
+
+<script>
+
+var s = ["abbed","abort","acryl","adder","adieu","adlød","adræt","advis","afart","afasi","afbud","afdød","affyr","afgav","afgik","afgud","afgør","afgår","afhop","afhør","afise","afkog","afkom","afkøl","aflad","afled","afluk","aflys","aflæg","aflæs","afløs","aflås","afmat","afmål","afpas","afpil","afret","afrim","afriv","afrul","afryd","afsat","afsav","afser","afses","afsky","afslå","afstå","afsyr","afsæb","afsæt","afsøg","aftal","aftog","aftør","afvej","afvig","afvis","afæsk","agent","agere","agern","agile","agilt","agora","agten","agter","agtes","agtet","agtig","agurk","ahorn","aioli","ajour","akryl","aksel","aksen","akser","akten","akter","aktie","aktiv","aktør","alarm","albue","album","alder","aldre","alebi","alegi","alene","alfer","alger","algon","alias","alibi","alien","alkyd","almue","alper","alpha","alpin","alrum","altan","alter","altid","altså","alvor","amigo","ammer","amour","ampul","amter","amøbe","analt","anden","andet","andre","anede","anfør","angav","anger","angik","angiv","angre","angår","ankel","anker","ankom","anlæg","anløb","anmod","annal","annis","ansat","anset","ansæt","ansøg","antag","antal","antog","antyd","anvis","anæsi","aorta","apate","appel","april","apsis","areal","arena","argon","arier","arisk","arken","arkiv","armen","armod","aroma","arres","arrig","arten","arter","artig","arver","ascii","asede","asien","asiet","asken","asket","aspic","astma","atlas","atlet","atopi","atten","atter","attrå","audio","avenu","aveny","avler","babar","bacon","badet","badge","bagen","bager","bagom","bagop","bagpå","bagte","bagud","bajer","bakke","bakse","balde","balge","balje","balle","bambi","bamse","banal","banan","banco","bange","banjo","banke","banko","barak","baret","barok","baron","barre","barsk","baryl","basar","baser","basic","basis","baske","basse","basta","basun","batch","batik","bauds","bavne","bazar","bebop","bebor","bebud","bebyg","bedet","bedre","bedøm","befal","befri","beføl","begik","beglo","begær","begår","behag","behov","bejas","bejle","bejse","bekom","belur","belys","belæs","beløb","beløn","benyt","berig","berme","beror","berøv","besad","besat","beser","besid","beslå","beste","bestå","besyv","besæt","besøg","betal","betar","beton","betro","betød","bevar","bevæg","beånd","biavl","bibel","bider","bidet","bidsk","bifag","bigam","bijob","bilag","biled","biler","bilkø","bille","bingo","binom","binær","biord","bisat","bison","bistå","bitre","bivej","bjerg","bjesk","bjørn","blade","bland","blank","bleer","blege","blide","blind","blink","blist","blitz","blive","blond","blues","blund","bluse","blænd","blæne","blære","blæse","bløde","blødt","boble","boede","bogen","bokse","bolde","bolig","bolle","bombe","bonde","boner","bongo","bonus","bopæl","borer","borge","borte","bosat","botox","bowle","boxer","bradt","brage","brand","brase","brast","brave","bravo","bravt","brede","bredt","breve","briks","bring","brink","brint","brise","broen","brude","brudt","brugs","brugt","brunt","bruse","brusk","bryde","brysk","bryst","brædt","bræer","bræge","brænd","brøde","brøle","brønd","bråde","budda","buede","buget","bugne","bugte","buket","bukke","buler","bulne","bumpe","bunds","bundt","burde","burka","buræg","buske","buste","butan","butik","bybad","bybil","bybud","bybus","bygas","byger","bygge","byhal","byhus","byliv","bymur","byrde","byråd","bysal","bytte","byvej","bæger","bække","bælge","bælte","bænke","bærer","bærme","bæver","bævre","bøden","bøder","bøjer","bøjle","bølge","bølle","bønne","børns","bøsse","bøtte","bøvle","bøvse","båden","bålet","båren","bårer","båsen","båtte","cacao","cargo","casco","celle","cello","ceres","cerut","check","chili","chips","cider","cigar","circa","cirka","citat","clips","coach","cobol","cobra","colon","crawl","cream","creme","crepe","cykel","cykle","dadel","dadle","dagen","dalen","daler","damer","dampe","daner","danne","danse","dansk","daser","daske","dater","datid","dativ","davre","debat","debet","debil","debug","debut","degne","dejse","dekan","deler","delle","delta","demin","demos","denar","denim","depot","deraf","deres","derom","derop","derpå","derud","desto","dette","detur","diare","diede","digel","diger","digte","dikke","dildo","dille","dinar","diner","diode","dipol","dirke","disco","diset","disko","disse","ditto","divan","djerv","djærv","dogme","dolke","donna","dorsk","doser","dosis","douce","douch","dovne","dovre","drage","dragt","drama","dreje","drejl","dreng","dress","drink","droge","drome","drone","drost","drude","druer","dræbe","dræne","drøje","drømt","dråbe","duede","dufte","dugen","dukat","dukke","dukse","dulgt","dumme","dumpe","dunke","dunre","dunst","duppe","durum","dusin","dusør","dvale","dvask","dvæle","dværg","dybde","dybet","dyden","dyder","dydig","dykke","dyner","dyppe","dyret","dyrke","dysse","dyste","dyvel","dække","dælen","dæmme","dæmon","dæmpe","dæmre","dænge","døber","døden","dømme","døsig","døtre","dåben","dåden","dådyr","dåren","dåser","edder","edikt","effen","efter","egale","egern","egnet","ejere","eksem","ekser","eksil","elbil","elegi","elite","eller","elske","email","emmer","emner","emsig","emuer","endda","endnu","endog","enere","engel","engen","enige","enkel","enker","ental","enten","entre","enzym","episk","epoke","essay","etage","etape","etisk","etude","etuir","eunuk","evige","evner","exces","fabel","facet","facil","facit","facon","fader","fadøl","fager","fagot","fakir","fakta","falde","falke","falme","falsk","famle","famøs","faner","fange","farad","farao","farce","farer","farin","farme","farve","fasan","faste","fatal","fatte","fauna","favne","favør","feber","fedte","fejde","fejer","fejle","fejre","femme","fenol","ferie","ferme","fersk","feste","fiber","fidel","fidus","figen","figur","fikse","filet","filme","filur","fimre","finde","finer","finis","finke","finne","finte","firer","firma","fiske","fisse","fiste","fjams","fjeld","fjern","fjert","fjord","flade","flage","flair","flash","flere","flige","flint","flirt","flise","flove","flugt","fluks","fluor","flute","flyde","flyve","flæbe","flæse","flæsk","fløde","fløjl","fløjt","flåde","fnise","fnyse","foder","foged","fokus","folde","foler","folia","folie","folin","folio","foran","forbi","force","fordi","forel","forme","forte","forud","forum","forår","foton","foyer","fragt","frank","frase","frede","frels","frise","frisk","front","frost","frugt","fryde","frygt","fryns","fryse","fræse","fråde","fråds","fugle","fulde","fumle","funke","furer","furie","fusel","fuser","fylde","fyrig","fyrst","fysik","fægte","fælde","fælle","fænge","færde","færre","fæste","føder","føjer","føjte","føler","følge","først","fåtal","gader","gafle","gager","galan","galde","galej","galge","galon","galop","galpe","gambe","gamin","gamma","ganen","gange","garde","garve","gasse","gaver","gavne","geare","gebis","gebyr","gedde","geden","gehør","gejle","gejst","gekko","geler","gemak","gemal","gemen","gemyt","genbo","genre","gerne","gevir","gevær","gibbe","gifte","gilde","gimpe","gisne","gispe","giver","gjald","gjord","glade","glane","glans","glide","glimt","glose","glæde","gløde","gløgg","gnide","gnist","goder","gokke","gople","gotik","grams","grand","grave","grene","greve","gribe","grill","grime","grine","grise","grisk","grove","grube","grund","gryde","græde","græsk","grøde","grøft","grønt","gubbe","guide","gulve","gumle","gumme","gumpe","gunst","gyder","gylle","gynge","gyser","gyvel","gælle","gænge","gærde","gæste","gætte","gøgle","gøren","gåder","gåtur","habil","habit","hader","hagel","hager","hagle","hakke","halen","hallo","halse","halte","halve","halvt","halvø","hamle","hamre","handy","hanen","hanke","hapse","harem","haren","harme","harpe","harsk","harve","haspe","haste","haven","haver","havet","havre","hedde","heden","hegle","hegne","hejre","hejsa","hejse","hekto","helet","helix","helle","helme","helot","helst","henad","hendø","henna","henne","hente","herme","herom","herop","heros","herre","herse","herud","herut","heste","hetze","hidse","higen","higer","hilde","hilse","hilst","himle","hinde","hinke","hirse","hisse","hitte","hiver","hjald","hjelm","hjord","hjort","hjælp","hobby","hoben","hofte","holde","holdt","holme","hopla","hoppe","horde","horst","hoser","hoste","hotel","hoved","hoven","hovsa","huden","hugge","hugst","huhej","hujen","huldt","hulen","hulke","human","humid","humle","humme","humor","humpe","humus","humør","hunde","hurra","husar","huset","huske","hutle","hvalp","hvede","hveps","hverv","hvide","hvidt","hvile","hvine","hvori","hvælv","hvæse","hybel","hyben","hydra","hydro","hygge","hykle","hylde","hyler","hylle","hymen","hymne","hynde","hyper","hyppe","hyrde","hytte","hæder","hæfte","hægte","hække","hælde","hæler","hæmme","hænge","hærde","hærge","hætte","hævde","hæver","hævne","høfde","højde","højre","højst","høker","hønse","hører","hørme","høste","høtyv","høved","høvle","håber","hånde","hårde","hårdt","ideal","ideer","idiom","idiot","idræt","ifald","iføre","igang","igler","igloo","ihjel","ikkun","ilder","ildhu","ildne","iling","ilter","iltog","imens","immer","immun","indad","indbo","inden","inder","index","indgå","indre","indse","infam","infra","ingen","input","intet","intim","ioner","irisk","ironi","isbar","isbod","isbåd","ising","islag","islam","islæt","ismer","isner","issen","isske","istap","ister","ivrer","ivrig","jaden","jager","jagte","jahve","jakel","jaket","jakke","jambe","jamre","jante","jappe","jaske","jazze","jeans","jeres","jeton","jinge","jobbe","jodle","jogge","joker","jokke","jolle","jorde","jotun","joule","jubel","juble","judas","judex","juice","julen","jumbe","junge","junke","junta","juvel","jyder","jæger","jætte","jævne","jøder","jøkel","jøtun","kabel","kabys","kadet","kaffe","kager","kagle","kahyt","kajak","kajen","kakao","kalas","kalde","kalif","kalot","kamel","kamik","kamin","kanal","kande","kanel","kanen","kanin","kanon","kanut","kapel","kapok","kappa","kappe","kapun","kaput","karat","karde","karet","kargo","karma","karpe","karre","karry","karse","karsk","karte","karve","kasko","kasse","kaste","kasus","katar","katte","kavaj","kazoo","kedel","keder","kefir","kejte","kelim","kende","kense","kerer","kerne","kerte","kerub","ketch","khaki","kigge","kikke","kikse","kilde","kiler","kilte","kimen","kimer","kimme","kimse","kinin","kinke","kiosk","kippe","kirke","kisse","kiste","kitte","kives","kjole","klage","klake","klamt","klang","klare","klart","klase","klask","klave","klejn","klemt","klerk","klier","klike","klima","kline","kling","klink","klint","klips","klire","kloak","klode","klods","kloer","kloge","klogt","klovn","klude","klump","kluns","klyde","klynk","klæbe","klæde","klædt","klæge","klægt","kløer","kløft","kløse","kløve","knage","knald","knark","knase","knast","knibe","kniks","knips","knirk","knive","knobe","knold","knyst","knægt","knæle","koala","koben","kobra","koder","kodex","kofte","koger","kogle","koket","kokke","kokon","kokos","kokse","kolbe","kolde","koldt","kolik","kolli","kolon","kolos","komet","komik","komme","kondi","konen","konge","konti","konto","konus","kopek","kopir","kopra","koral","koran","korde","koret","korps","korte","kosak","kosmo","koste","koter","koøje","krads","kraft","krage","krams","krank","krans","krast","krave","kravl","krebs","kreds","kridt","krige","krimi","kring","krins","krise","kroer","kroge","krone","krudt","krumt","kruse","krybe","krybt","kryds","krypt","kræft","kræse","kræve","krølt","kråse","kubbe","kubik","kuffe","kugle","kujon","kukke","kulde","kulle","kulør","kumme","kunde","kunne","kunst","kupon","kurer","kurre","kurve","kuske","kutte","kvaje","kvalm","kvalt","kvark","kvart","kvase","kvast","kvide","kvikt","kvint","kvist","kvota","kvæde","kvæld","kværk","kværn","kvæse","kynde","kyras","kyser","kyske","kæben","kæder","kæfte","kække","kæler","kælke","kælve","kæmme","kæmpe","kærer","kærne","kærre","kæver","kævle","køber","køjer","køler","kølle","kører","kørne","kørom","kåben","kålen","kårde","kåret","laban","laber","labil","lader","lagen","lager","lagre","lakaj","lakke","lalle","lamel","lamme","lampe","lande","lange","langs","langt","lanse","largo","larme","larve","laser","laske","lasso","laste","lasur","latin","laver","lavet","lease","leben","leden","ledet","ledig","lefle","legal","legat","leger","legio","lejde","lejer","lejre","lempe","lemur","lepra","leret","letal","lette","lever","levne","levre","libra","liden","lider","liere","lifte","ligge","ligne","likør","lilje","lilla","lille","limer","limit","limon","linde","liner","linie","linje","linse","lirer","lirke","lisen","liste","liter","litra","livet","livre","ljore","lobbe","lobby","locus","lodde","loden","lodet","lodse","logen","logge","logik","logre","lokal","lokke","lokum","lokus","lomme","lomvi","longe","loope","loppe","loren","losse","lotte","lotus","loven","loyal","lubbe","luder","luffe","lufte","lugar","luger","lugte","lukaf","lukke","lulle","lumen","lumpe","lumsk","lunch","luner","lunge","lunke","lunte","lupin","luppe","lupus","luren","luske","lutre","luven","lyden","lyder","lygte","lykke","lymfe","lyner","lynne","lyren","lyrik","lyset","lysne","lyste","lysår","lytte","lyver","læber","læder","lægen","læger","lægge","lægte","lækat","lække","læmme","læner","længe","lænke","lænse","lærde","læren","lærer","lærke","læser","læske","læspe","løber","lødig","løfte","løgne","løgte","løjpe","løkke","lønne","løsen","løser","løven","løvet","låden","låget","låret","låsen","madam","maden","mader","madro","mafia","mager","magma","magre","magte","maile","major","maler","malke","malle","malte","malør","mande","maner","mango","manir","manke","manko","manna","manus","mappe","march","marer","marsk","marts","maser","maske","massa","masse","match","mater","maven","maver","meder","medgå","media","medie","medio","megen","meget","mejer","mejse","melon","mened","mener","menig","mente","merci","merit","mesan","messe","meste","metal","metan","meter","metro","meute","mider","midje","midle","midte","mikke","mikro","mikse","milde","miljø","mille","mimik","mimre","minde","miner","minus","minut","minør","misse","miste","mitra","mixer","mjave","mobbe","mobil","modal","model","modem","moden","moder","modgå","modig","modul","mogul","mokka","mokke","molar","molbo","moler","molok","monde","monte","moppe","moral","morel","moren","mosen","moske","motel","motiv","motor","motto","movie","muffe","mugge","mukke","mulat","mulde","mulen","mulig","mulle","multe","multi","mumie","mumle","munde","munke","muren","murer","murre","musel","musik","mutti","muzak","mynde","mynte","myrde","myrer","myrte","mysli","mysse","myter","mæcen","mægle","mægte","mælde","mænge","mærke","mærle","mæske","mætte","møbel","møder","mødes","mødom","mødre","mølle","mønje","mønte","mørke","mørne","møver","måber","måder","måger","måler","måned","måner","måsen","måske","måtte","nadir","nafta","nagel","naive","nakke","nalre","nandu","nappa","nappe","naren","nasal","nasse","natal","nativ","natte","natur","naval","navle","navne","nedad","neden","neger","negle","negus","nejer","nemme","nerie","nertz","nerve","netop","nette","netto","niche","nidet","nidsk","niece","nikke","nippe","nipse","nisse","nital","nitid","nitte","niver","nixen","nobel","noden","noder","noget","noget","nokke","nonne","noppe","noret","norne","nosse","notar","notat","noter","nulet","nulle","nuppe","nurse","nutid","nuvel","nyder","nykke","nylig","nylon","nymfe","nynne","nyser","nysle","nytte","nytår","nægte","nælde","nænne","næppe","nærer","nærig","næsen","næste","næver","nævne","nødde","nøder","nødig","nøgen","nøgle","nøjes","nøkke","nølen","nøler","nørre","nåden","nålen","oasen","oaser","oasis","oblat","ocean","odden","odder","odium","odiøs","offer","okker","okser","oktan","oktav","oktet","olden","olien","ombud","omdel","omega","omegn","omelet","omend","omgik","omgås","omlyd","omløb","omtal","omvej","onder","onkel","opdag","opera","opfør","opgav","opgiv","opgør","ophav","ophob","ophæv","ophør","opium","oplag","oplev","opliv","opløs","opnår","opper","opret","oprør","opråb","opsat","opsig","opstå","opsyn","opsæt","optag","optik","optog","opvej","opøve","oralt","orbis","ordal","orden","ordet","ordne","ordre","organ","orgel","orgie","orkan","orker","orlog","orlon","orlov","ornat","orner","otium","ovale","oveni","overe","pacer","padde","padre","pagaj","paket","pakke","palet","palle","palma","palme","palpe","palæo","panda","pande","panel","panik","pante","papil","papir","parat","paria","parre","parte","parti","party","paryk","passe","pasta","paste","pater","patio","patos","patte","pauke","pause","paven","peber","pedal","pedel","peger","pejle","pelse","penge","penis","penne","penta","perle","perse","petit","piano","piben","piber","pible","pieen","pifte","pigen","piger","piket","pikke","pilen","pilke","pille","pilot","pilte","pimpe","pinde","pinen","pinje","pinol","pinot","pinse","pinus","pippe","pirat","pirke","pirog","pirol","pirre","piske","piste","pivet","pivot","pjalt","pjask","pjece","pjevs","pjusk","plade","plads","plage","plaid","plant","plask","plast","plaza","pleje","plejl","pligt","plint","plire","plump","pluto","plæne","pløre","poder","poesi","point","pokal","poker","polak","polar","polen","polet","polka","polte","polyp","ponto","porer","porno","porre","porte","porto","porøs","potte","pragt","praje","prale","prang","prate","prent","prikl","prima","prime","primo","prins","prior","prise","prist","probe","prunk","pryde","prygl","pryne","præge","præst","prøve","psyke","pubes","puder","pudse","puger","pukke","pukle","pulde","pulje","pulse","pulte","pumpe","pumps","punch","punge","punkt","pupil","puppe","purke","purre","pusle","puste","putte","pygmæ","pylon","pylre","pynte","pyrex","pyæmi","pægle","pærer","pøbel","pølle","pølse","pønse","pøser","påbud","pågår","påhit","pålæg","påske","påstå","påsyn","påtag","queen","quize","rabat","rabbi","rable","racen","racer","radar","rader","radio","rafle","rafte","rager","rajah","raket","rakke","rakle","ralle","rally","ramle","ramme","rampe","ramse","ranch","rande","raner","range","rangt","ranke","rankt","rappe","rapse","raser","raske","rasle","raspe","raste","rater","ratio","ravet","ravne","rayon","reale","rebel","rebus","redde","reden","reder","redet","reelt","regel","regie","regne","rejer","rejfe","rejse","remis","remme","remse","rende","rener","rense","rente","reste","retor","retro","rette","retur","revet","revir","revle","revne","revse","ribbe","rible","rider","ridse","rifle","rigel","rigge","rigid","rigor","rikse","rille","rimer","rimpe","rimte","rinde","ringe","rinke","rippe","risen","riser","risle","riste","rival","river","roast","rober","robot","robåd","rodeo","roden","roder","rodet","rokke","rolle","roman","rombe","rommy","ronde","rondo","rosen","roser","roset","rosin","roste","roter","rotte","rouge","rover","rubel","rubin","ruche","rudel","ruder","rugby","rugen","ruger","rulle","rumba","rumle","rumme","rumpe","runde","rundt","runer","runge","rural","rusen","ruske","rusme","ruste","ruter","rutte","rydde","ryger","rygge","rygte","rykke","ryler","rynke","ryper","ryste","rytme","ræben","rædde","rækel","række","rænke","ræser","ræset","ræson","ræven","røber","røgen","røgte","rømme","rønne","rører","rørte","røræg","røste","røsti","røven","røver","råben","råber","råbuk","råder","rådig","rådyr","råger","råhed","sabel","sadel","sadle","safir","safte","sager","sagte","sahib","saint","saken","sakke","sakse","salat","saldo","salen","salig","salix","salme","salon","salpe","salsa","salte","salut","salve","salær","samba","sambo","samle","samme","sande","sange","sanke","sankt","sanse","sante","sapør","sarte","satan","satin","satse","satyr","sauce","sauna","saute","saven","saver","savle","scarf","scene","scoop","score","sedan","sedes","sedum","seere","segle","segne","sejle","sejre","sejse","sekel","sekte","selen","seler","selve","semle","senat","sende","sendt","sener","senex","senge","senil","senor","sepia","seraf","serge","serie","serum","serve","sesam","sexet","sfære","shake","sheik","siben","sidde","siden","sider","sidst","sifon","siger","sigma","signe","sigte","sikar","sikke","silde","silen","siler","silke","simle","simre","simse","sinde","sinke","sippe","sirts","sirup","sisal","sitre","siver","sjask","sjavs","sjove","sjusk","sjæle","skabe","skabt","skade","skaft","skakt","skala","skalk","skalp","skank","skare","skark","skarn","skarp","skarv","skate","skats","skave","skede","skeer","skeet","skeje","skejs","skele","skema","skibe","skide","skidt","skift","skikt","skilt","skimt","skind","skink","skive","skjul","skoen","skole","skort","skose","skove","skovl","skrab","skral","skrap","skred","skrid","skrig","skrin","skriv","skrog","skrot","skrub","skrud","skrue","skruk","skrup","skrut","skræk","skræl","skræp","skræv","skrål","skude","skudt","skuer","skuld","skule","skulp","skump","skunk","skure","skurk","skurv","skvat","skvæt","skyde","skyds","skyer","skyld","skyts","skægt","skælm","skælv","skæmt","skænd","skænk","skære","skærf","skærm","skærv","skæve","skøde","skøge","skøje","skøns","skønt","skøre","skørt","skåle","skåne","skåre","slabe","slags","slang","slank","slant","slapt","slave","slemt","slesk","sleve","slibe","slide","slids","slidt","sligt","slips","slire","sluge","slugt","slump","slurk","sluse","slyng","slæbe","slæbt","slæde","slægt","slæng","sløjd","sløje","sløre","sløse","sløve","slåen","smage","smagt","smalt","smart","smask","smede","smelt","smide","smile","smovs","smuds","smuld","smule","smult","smyge","smæde","smæld","smøge","smøle","smøre","smået","snack","snage","snaps","snare","snart","snask","snavs","sneen","snegl","snert","snese","snige","snipe","snive","snoet","snoge","snore","snork","snude","snuen","snuse","snyde","snære","snært","snøre","snøvl","snøvs","sober","sogne","solar","solde","solen","solgt","solid","solur","somme","sonar","sonde","soner","sonet","sonor","soppe","sorte","sover","sovse","spade","spage","spand","spant","spare","spase","speed","spege","spejl","spelt","spids","spild","spile","spind","spion","spire","spise","spist","spjæt","splid","split","spole","spore","sport","spots","spove","spray","spred","sprit","sprog","sprok","sprut","spræl","spræt","sprød","spule","spuns","spurt","spurv","spæde","spæge","spænd","spæne","spøge","spøjs","spøle","spørg","stade","stads","stage","stald","stand","stang","stank","start","stase","stave","stavn","stedt","stege","stegt","stejl","stelt","stene","stift","stige","stile","stilk","stime","sting","stive","stjæl","stola","stole","stolt","store","stork","storm","stort","story","stovt","straf","stram","streg","strid","strik","strip","strop","strut","stryg","stræb","strøg","strøm","stude","studs","stuen","stump","stund","stuts","stuve","stygt","style","styne","styre","styrt","stænk","stære","stærk","stæse","støbe","støde","stødt","støje","støve","suder","sudra","suger","suite","sujet","sukat","sukke","sulfa","sulky","sulte","sumak","summe","sumpe","sunde","sundt","super","suppe","surre","susen","sushi","sutte","sutur","svada","svage","svaje","svale","svamp","svane","svang","svans","svare","svede","svedt","svend","svide","svien","svige","svime","svind","svine","sving","svips","svire","svovl","svælg","sværd","svære","sværm","svært","svæve","svøbe","syder","sydpå","syere","sygne","sylfe","sylte","synde","syner","synes","synge","synke","synsk","synål","syren","syrne","sysle","syver","sæben","sæber","sæder","sædet","sække","sælde","sæler","sælge","sænke","særke","sæson","sæter","sætte","søgen","søjle","søkok","sølle","sømil","sømme","søren","sørge","sørme","søsat","søsyg","sådan","såder","sågar","såler","sårbar","såret","såsom","såvel","tabel","taber","tabes","tabte","tacet","tager","taget","takke","takle","talar","taler","talje","talon","tamme","tampe","tande","tanga","tange","tango","tanke","tante","tapet","tapir","tappe","tarif","tarme","tarok","taske","taste","tatar","tater","tavle","tavse","teder","tegne","tehus","teint","tejne","tekop","tekst","telex","telte","tempi","tempo","tenor","teori","terne","terpe","tesis","teske","teste","theta","thora","thuja","tiare","tiden","tider","tidig","tidse","tiest","tiger","tigge","tikke","tilgå","tilje","timen","timer","times","timid","timor","tinde","tinge","tippe","tipse","tirre","tiske","tital","titan","titel","titte","tjans","tjavs","tjene","tjept","tjæld","tjære","tjørn","toast","tobak","tobis","toddy","tofte","tolde","tolke","tomat","tomme","tonen","toner","tonic","tonus","topas","toppe","torne","toros","torsk","torso","torve","tosse","total","totem","totum","touge","toupe","trade","tragt","tramp","trane","trang","trave","travl","trawl","trema","trend","trevl","trial","trias","trick","trind","trine","trist","trods","troen","trofæ","trokæ","trold","trone","trope","truck","truer","trumf","trust","trygt","trykt","tryne","træde","træge","træls","træne","træsk","trævl","trøje","trøsk","trøst","tråde","tseta","tuben","tuden","tudse","tugte","tukan","tulle","tumba","tumle","tumor","tuner","tunge","turbo","turde","turne","tusch","tuske","tutor","tutte","tvang","tvege","tveje","tvine","tvist","tvivl","tværs","tvært","tweed","twist","tyder","tyfon","tyfus","tygge","tykke","tylle","tynde","tynge","typen","typer","tyran","tyren","tysse","tyven","tyver","tæger","tække","tælle","tæmme","tænde","tænia","tænke","tæppe","tærer","tærsk","tærte","tætte","tæver","tøffe","tøjet","tøjle","tøjre","tøjte","tømme","tønde","tørne","tørre","tørst","tøset","tøsne","tøver","tåben","tåber","tågen","tåget","tåren","tårer","tårne","ublid","udbud","udgik","udgår","udhus","udlæg","udstå","udtog","udvej","udørk","udøve","ufoer","uføre","uglen","uhyre","uhørt","ujævn","uklar","ulden","ulige","ulmer","ultra","ulven","umage","umbra","under","undre","unere","ungen","unger","unikt","union","unode","urban","urede","urnen","urten","urtid","uræmi","usagt","ussel","utide","utopi","utryg","utugt","uvane","uvejr","uvorn","uægte","vabel","vader","vager","vagus","vajer","vakle","vakse","vakst","valen","valgt","valid","valke","valle","valse","valte","valør","vamle","vande","vanen","vaner","vange","vanke","vanry","vante","varen","varer","varig","varme","varpe","vasal","vasen","vaske","vater","vedet","vedgå","vegne","vejer","vejet","velan","velin","velle","vemod","vende","venen","vener","vente","venus","verfe","verve","veråb","vesir","veste","viber","vicen","vidde","viden","video","vidne","vieer","vifte","vigen","vigne","vigte","vigør","vikar","vikke","vikle","vikse","vilde","villa","ville","vimre","vimse","vinde","vinge","vinke","vinøs","vippe","virak","viril","virke","virre","virus","visen","viser","visir","visit","viske","visne","visse","vital","vodka","vogne","vogte","voici","vokal","vokse","volde","volte","volut","vorde","vorte","votiv","votum","vover","vovet","vrage","vrang","vrede","vride","vrist","vræle","vrøvl","vugge","vulst","vulva","vupti","væbne","vædde","vægre","vægte","vægur","vække","vælde","vælge","vælig","vælte","væmme","vænge","værdi","været","værft","værge","værke","værne","værpe","væsel","væsen","væske","vætte","væver","vølve","våben","vågen","våger","vånde","våren","våset","wagon","yacht","ydmyg","ydret","ynder","yndet","yngel","yngre","yngst","ypper","yppig","ytrer","zakat","zebra","zefyr","zelot","zobel","zonen","zoner","æbler","ædelt","æderi","ægide","ægter","ækelt","ældes","ældet","ælter","æltet","ændre","ænser","ærbar","ærlig","ærmet","ærten","æsken","æspen","ætser","ætset","ævler","ævles","ævred","øboer","ødsle","øglen","øksen","ølfad","ømhed","ønske","ørken","ørnen","øsken","østen","øster","østpå","øvrig","åbent","åbryn","ånden","ånder","årbog","åring","årkok","årlig","årsag","årtal","årtid","årvis","åsted"]
+
+function filter(){
+    for (var i=0; i<5; i++) {
+        var pi1 = [' ',' ',' ',' ',' '];
+        var pn1 = [' ',' ',' ',' ',' '];
+        var pr1 = [' ',' ',' ',' ',' '];
+        for (var j=0; j<5; j++) {
+            if (sp2.value[j] == '0') {
+                pn1[j] = sp1.value[j];
+            } else if (sp2.value[j] == '1') {
+                pi1[j] = sp1.value[j];
+            } else {
+                pr1[j] = sp1.value[j];
+            }   
+        }
+    }
+    var pl = []
+    for (var i=0; i<5; i++) {
+        for (var j=0; j<ar.length; j++) {
+            if (ar[j].indexOf(pn1[i]) <0) {
+                pl.push(ar[j]);
+            } 
+        }
+        ar = pl;
+        pl = [];    
+    }
+    for (var i=0; i<5; i++) {
+        if (pi1[i] != " ") {
+            for (var j=0; j<ar.length; j++) {
+                if (ar[j].indexOf(pi1[i]) >-1) {
+                    pl.push(ar[j]); 
+                } 
+            }
+            ar = pl;
+            pl = [];
+        }    
+    }
+    for (var i=0; i<5; i++) {
+        if (pi1[i] != " ") {
+            for (var j=0; j<ar.length; j++) {
+                if (ar[j][i] != pi1[i]) {
+                    pl.push(ar[j]); 
+                } 
+            }
+            ar = pl;
+            pl = [];
+        }    
+    }
+    for (var i=0; i<5; i++) {
+        if (pr1[i] != " ") {
+            for (var j=0; j<ar.length; j++) {
+                if (ar[j][i] == pr1[i]) {
+                    pl.push(ar[j]); 
+                } 
+            }
+            ar = pl;
+            pl = [];
+        }    
+    }
+}
+
+
+
+
+
+
+var sp1=document.getElementById("i1");
+var sp2=document.getElementById("i2");
+var o1=document.getElementById("ord1");
+var o2=document.getElementById("ord2");
+var o3=document.getElementById("ord3");
+var o4=document.getElementById("ord4");
+var o5=document.getElementById("ord5");
+var fo1=document.getElementById("fo1");
+var fs1=document.getElementById("fs1");
+var ar=s;
+
+function vis(){
+    filter();
+    var s1='';
+    var s2='';
+    var s3='';
+    var s4='';
+    var s5='';
+    var i=0;
+    while (i<=Math.floor(ar.length/5)){
+        if (5*i<ar.length) s1+="<br>"+ar[5*i];
+        if (5*i+1<ar.length) s2+="<br>"+ar[5*i+1];
+        if (5*i+2<ar.length) s3+="<br>"+ar[5*i+2];
+        if (5*i+3<ar.length) s4+="<br>"+ar[5*i+3];
+        if (5*i+4<ar.length) s5+="<br>"+ar[5*i+4];
+        i+=1;                                           
+    }
+    o1.innerHTML+=s1;
+    o2.innerHTML+=s2;
+    o3.innerHTML+=s3;
+    o4.innerHTML+=s4;
+    o5.innerHTML+=s5;
+}
+
+function rens(){
+    fo1.innerHTML+=sp1.value+"&nbsp;&nbsp;";
+    fs1.innerHTML+=sp2.value+"&nbsp;&nbsp;";
+    sp1.value="";
+    sp2.value="";
+    o1.innerHTML="";
+    o2.innerHTML="";
+    o3.innerHTML="";
+    o4.innerHTML="";
+    o5.innerHTML="";
+    
+}
+</script>
+</body>
+</html>
