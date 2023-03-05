@@ -13,7 +13,7 @@ body {
     font-family:sans-serif;
 }
 
-.lb1{
+.lb1 {
     display:block;
     margin-top:1em;
     margin-bottom:1em;
@@ -25,7 +25,7 @@ body {
     margin-left:.5em;
 }
 
-#i1,#i2{
+#i1,#i2 {
     width:4em;
 }
 
@@ -35,23 +35,23 @@ body {
 }
 
 
-h2{
+h2 {
     margin-bottom:0em;
     font-size:1.25em;
 }
 
-h1{
+h1 {
     font-size:1.5em;
 }
 
-#ord1, #ord2, #ord3, #ord4, #ord5{
+#ord1, #ord2, #ord3, #ord4, #ord5 {
     float:left;
     margin-top:.25em;
     margin-right:1em;
     text-transform:lowercase;
 }
 
-input[type="button"]{
+input[type="button"] {
   background-color: #d8d8d8;
   color: black;
   padding: 4px;
@@ -425,21 +425,22 @@ var ar = ["abbed","abort","acryl","adder","adieu","adlød","adræt","advis","afa
 "øvrig","åbent","åbryn","ånden","ånder","årbog","åring","årkok","årlig","årsag",
 "årtal","årtid","årvis","åsted",];
 
-function filter(){
+function filter() {
+    var sp1v = sp1.value.toLowerCase();
+    var sp2v = sp2.value;
     for (var i=0; i<5; i++) {
         var pi1 = [" "," "," "," "," "];
         var pn1 = [" "," "," "," "," "];
         var pr1 = [" "," "," "," "," "];
         for (var j=0; j<5; j++) {
-            if (sp2.value[j] == "0") {
-                pn1[j] = sp1.value[j];
-            } else if (sp2.value[j] == "1") {
-                pi1[j] = sp1.value[j];
+            if (sp2v[j] == "0") {
+                pn1[j] = sp1v[j];
+            } else if (sp2v[j] == "1") {
+                pi1[j] = sp1v[j];
             } else {
-                pr1[j] = sp1.value[j];
+                pr1[j] = sp1v[j];
             }   
         }
-        alert(pn1[0]);
     }
     var pl = []
     for (var i=0; i<5; i++) {
@@ -498,7 +499,7 @@ var o5=document.getElementById("ord5");
 var fo1=document.getElementById("fo1");
 var fs1=document.getElementById("fs1");
 
-function vis(){
+function vis() {
     filter();
     var s1="";
     var s2="";
@@ -506,7 +507,7 @@ function vis(){
     var s4="";
     var s5="";
     var i=0;
-    while (i<=Math.floor(ar.length/5)){
+    while (i<=Math.floor(ar.length/5)) {
         if (5*i<ar.length) s1+="<br>"+ar[5*i];
         if (5*i+1<ar.length) s2+="<br>"+ar[5*i+1];
         if (5*i+2<ar.length) s3+="<br>"+ar[5*i+2];
@@ -521,8 +522,8 @@ function vis(){
     o5.innerHTML+=s5;
 }
 
-function rens(){
-    fo1.innerHTML+=sp1.value+"&nbsp;&nbsp;";
+function rens() {
+    fo1.innerHTML+=sp1.value.toLowerCase()+"&nbsp;&nbsp;";
     fs1.innerHTML+=sp2.value+"&nbsp;&nbsp;";
     sp1.value="";
     sp2.value="";
