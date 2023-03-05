@@ -83,7 +83,7 @@ input[type="button"]{
 
 <script>
 
-var s = ["abbed","abort","acryl","adder","adieu","adlød","adræt","advis","afart","afasi",
+var ar = ["abbed","abort","acryl","adder","adieu","adlød","adræt","advis","afart","afasi",
 "afbud","afdød","affyr","afgav","afgik","afgud","afgør","afgår","afhop","afhør",
 "afise","afkog","afkom","afkøl","aflad","afled","afluk","aflys","aflæg","aflæs",
 "afløs","aflås","afmat","afmål","afpas","afpil","afret","afrim","afriv","afrul",
@@ -439,6 +439,7 @@ function filter(){
                 pr1[j] = sp1.value[j];
             }   
         }
+        alert(pn1[0]);
     }
     var pl = []
     for (var i=0; i<5; i++) {
@@ -487,9 +488,6 @@ function filter(){
 
 
 
-
-
-
 var sp1=document.getElementById("i1");
 var sp2=document.getElementById("i2");
 var o1=document.getElementById("ord1");
@@ -499,7 +497,6 @@ var o4=document.getElementById("ord4");
 var o5=document.getElementById("ord5");
 var fo1=document.getElementById("fo1");
 var fs1=document.getElementById("fs1");
-var ar=s;
 
 function vis(){
     filter();
